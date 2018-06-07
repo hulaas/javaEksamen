@@ -15,7 +15,7 @@ public class Staff extends JDialog implements ActionListener {
 
 
 
-    public Staff(String title) {
+    public Staff(String title) throws Exception {
         setTitle(title);
         setLayout(new GridLayout(2, 1));
         JPanel staffPanel = new JPanel();

@@ -16,7 +16,7 @@ public class Login extends JDialog implements ActionListener {
     private String guiToOpen;
 
 
-    public Login(String title) {
+    public Login(String title) throws Exception {
         setTitle(title);
         setLayout(new GridLayout(2, 1));
         JPanel loginPanel = new JPanel();
