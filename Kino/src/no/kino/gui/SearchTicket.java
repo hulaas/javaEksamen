@@ -51,17 +51,17 @@ public class SearchTicket extends JDialog implements ActionListener {
 
     public void actionPerformed(ActionEvent evt) {
         String valg = evt.getActionCommand();
-        if(valg.equals("Søk")) fillSearch();
+        if(valg.equals("Søk")) System.out.println("hei");
         else setVisible(false);
     }
 
 
-    public void fillSearch(){
+    /*public void fillSearch(){
         Object[][] tabell = searchList();
         searchtable.setModel(new DefaultTableModel(tabell,kolonnenavn));
-    }
+    }*/
 
-    public Object[][] searchList() {
+    /*public Object[][] searchList() {
         Object[][] innhold = new Object[1][3];
         int teller = 0;
         String epost = txtTicket.getText();
@@ -78,7 +78,7 @@ public class SearchTicket extends JDialog implements ActionListener {
             }
         }catch(Exception e){JOptionPane.showMessageDialog(null, "Klarte ikke opprette tabell");}
         return innhold;
-    }
+    }*/
 
 
 }

@@ -9,11 +9,11 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
 public class Gui extends JFrame implements ActionListener {
-    private Login login = new Login("Login");
-    private Kunde kunde = new Kunde("Kunde");
+    private Login login = new Login("Logg inn");
+    private Customer customer = new Customer("Kunde");
 
 
-    public Gui(String title) {
+    public Gui(String title) throws Exception {
         super.setTitle(title);
 
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
@@ -51,7 +51,7 @@ public class Gui extends JFrame implements ActionListener {
                     login.setVisible(true);
                     break;
                 case "Kunde":
-                    kunde.setVisible(true);
+                    customer.setVisible(true);
                     break;
                 default:
                     System.exit(0);

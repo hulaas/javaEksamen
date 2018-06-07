@@ -9,8 +9,8 @@ public class Control {
     ArrayList<Movie> movieList = new ArrayList<>();
     ArrayList<Showing> showingList = new ArrayList<>();
     ArrayList<Ticket> ticketList = new ArrayList<>();
-    ArrayList<Place> placeList = new ArrayList<>();
-    ArrayList<TicketPlace> ticketPlaceList = new ArrayList<>();
+    ArrayList<Seat> placeList = new ArrayList<>();
+    ArrayList<SeatTicket> seatTicketList = new ArrayList<>();
     ArrayList<Cinema> cinemaList = new ArrayList<>();
 
     private String databasename = "jdbc:mysql://localhost:3306/kino?useSSL=false";
@@ -134,7 +134,7 @@ public class Control {
             int seatNumber = result.getInt("p_setenr");
             int cinemaNumber = result.getInt("p_kinosalnr");
 
-            Place place = new Place(rowNumber, seatNumber, cinemaNumber);
+            Seat place = new Seat(rowNumber, seatNumber, cinemaNumber);
             placeList.add(place);
         }
     }
@@ -149,8 +149,8 @@ public class Control {
             int cinemaNumber = result.getInt("pb_kinosalnr");
             String ticketCode = result.getString("pb_billettkode");
 
-            TicketPlace ticketPlace = new TicketPlace(rowNumber, seatNumber, cinemaNumber, ticketCode);
-            ticketPlaceList.add(ticketPlace);
+            SeatTicket seatTicket = new SeatTicket(rowNumber, seatNumber, cinemaNumber, ticketCode);
+            seatTicketList.add(seatTicket);
         }
     }
 
@@ -192,20 +192,20 @@ public class Control {
         this.ticketList = ticketList;
     }
 
-    public ArrayList<Place> getPlaceList() {
+    public ArrayList<Seat> getPlaceList() {
         return placeList;
     }
 
-    public void setPlaceList(ArrayList<Place> placeList) {
+    public void setPlaceList(ArrayList<Seat> placeList) {
         this.placeList = placeList;
     }
 
-    public ArrayList<TicketPlace> getTicketPlaceList() {
-        return ticketPlaceList;
+    public ArrayList<SeatTicket> getSeatTicketList() {
+        return seatTicketList;
     }
 
-    public void setTicketPlaceList(ArrayList<TicketPlace> ticketPlaceList) {
-        this.ticketPlaceList = ticketPlaceList;
+    public void setSeatTicketList(ArrayList<SeatTicket> seatTicketList) {
+        this.seatTicketList = seatTicketList;
     }
 
     public ArrayList<Cinema> getCinemaList() {
